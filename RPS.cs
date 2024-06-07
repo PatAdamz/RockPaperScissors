@@ -6,54 +6,33 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    class RPS
+    public class RPS
     {
-        public int ID
+        public Options Selection
         {
             get;
             set;
         }
 
-        public string Selection
-        {
-            get 
-            {
-                switch (ID)
-                {
-                    case 1:
-                        return "Rock";
-                    case 2:
-                        return "Paper";
-                    case 3:
-                        return "Scissors";
-                    default:
-                        return "Undefined";
-                }
-            }
-        }
 
-        public string Weakness
+
+        public Options Weakness
         {
             get 
             { 
                 switch(Selection)
                 {
-                    case "Rock":
-                        return "Paper";
-                    case "Paper":
-                        return "Scissors";
-                    case "Scissors":
-                        return "Rock";
+                    case Options.Rock:
+                        return Options.Paper;
+                    case Options.Paper:
+                        return Options.Scissors;
+                    case Options.Scissors:
+                        return Options.Rock;
                     default:
-                        return "Undefined";
+                        return Options.Undefined;
                 }
             }
         }
 
-
-       public RPS(int id)
-        {
-            ID = id;
-        }
     }
 }
